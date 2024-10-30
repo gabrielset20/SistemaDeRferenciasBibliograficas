@@ -1,4 +1,4 @@
-package DTOs;
+package com.example.gestaobibliografica.DTOs;
 
 import java.util.List;
 

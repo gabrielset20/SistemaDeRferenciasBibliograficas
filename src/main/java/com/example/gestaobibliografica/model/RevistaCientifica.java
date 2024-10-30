@@ -1,4 +1,4 @@
-package model;
+package com.example.gestaobibliografica.model;
 
 import jakarta.persistence.*;
 import java.util.List;
@@ -19,7 +19,7 @@ public class RevistaCientifica {
     private String nome;
 
     //Relacionamento um-para-muitos com Artigo.
-    @OneToMany(mappedBy = "revistaCienifica")
+    @OneToMany(mappedBy = "revistaCientifica")
     private List<Artigo> artigos;
 
     public RevistaCientifica() {}

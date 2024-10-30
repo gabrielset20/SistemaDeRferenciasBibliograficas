@@ -1,4 +1,4 @@
-package DTOs;
+package com.example.gestaobibliografica.DTOs;
 
 import java.util.List;
 // Os DTOs são usados para transferir dados entre as camadas da aplicação.

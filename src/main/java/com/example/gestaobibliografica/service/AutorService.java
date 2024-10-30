@@ -1,9 +1,9 @@
-package service;
+package com.example.gestaobibliografica.service;
 
-import model.Autor;
+import com.example.gestaobibliografica.model.Autor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.AutorRepository;
+import com.example.gestaobibliografica.repository.AutorRepository;
 import jakarta.persistence.*;
 import java.util.List;
 

@@ -1,8 +1,6 @@
-package model;
+package com.example.gestaobibliografica.model;
 
 import jakarta.persistence.*;
-import java.util.List;
-
 import java.util.List;
 
 // A anotação @Entity indica que essa classe é uma entidade JPA.
@@ -15,7 +13,9 @@ public class Autor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String nome;
+    @Column(nullable = false)
     private String afiliacao;
 
     // @ManyToMany indica um relacionamento muitos-para-muitos com a entidade Artigo.

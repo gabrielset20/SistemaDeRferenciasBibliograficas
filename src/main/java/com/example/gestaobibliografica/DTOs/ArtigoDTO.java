@@ -1,6 +1,6 @@
-package DTOs;
+package com.example.gestaobibliografica.DTOs;
 
-import model.RevistaCientifica;
+import com.example.gestaobibliografica.model.RevistaCientifica;
 
 import java.util.List;
 

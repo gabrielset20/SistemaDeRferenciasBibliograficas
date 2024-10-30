@@ -1,6 +1,6 @@
-package repository;
+package com.example.gestaobibliografica.repository;
 
-import model.Autor;
+import com.example.gestaobibliografica.model.Autor;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 // Para acessar os dados no banco de forma eficiente, usaremos interfaces que herdam

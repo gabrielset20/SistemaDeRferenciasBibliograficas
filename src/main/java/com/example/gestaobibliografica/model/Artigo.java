@@ -1,6 +1,8 @@
-package model;
+package com.example.gestaobibliografica.model;
 
 import jakarta.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 //Indicar classe como entidade JPA.
@@ -15,28 +17,28 @@ public class Artigo {
     private String titulo;
     private int anoPublicacao;
 
-    //Relacionamento muitos-para-muitos com Autor.
+    // Relacionamento muitos-para-muitos com a entidade Autor.
     @ManyToMany
     @JoinTable(
-            name= "artigo_autor",
+            name = "artigo_autor",
             joinColumns = @JoinColumn(name = "artigo_id"),
             inverseJoinColumns = @JoinColumn(name = "autor_id")
     )
     private List<Autor> autores;
 
-    //Relacionamento muitos-para-um com RevistaCientifica
+    // Relacionamento muitos-para-um com RevistaCientifica.
     @ManyToOne
     @JoinColumn(name = "revista_id")
     private RevistaCientifica revistaCientifica;
 
     public Artigo() {}
 
-    public Artigo(Long id, String titulo, int anoPublicacao, List<Autor> autores, RevistaCientifica revistaCientifica) {
-        this.id = id;
-        this.titulo = titulo;
-        this.anoPublicacao = anoPublicacao;
-        this.autores = autores;
+    public Artigo(RevistaCientifica revistaCientifica, List<Autor> autores, int anoPublicacao, String titulo, Long id) {
         this.revistaCientifica = revistaCientifica;
+        this.autores = autores;
+        this.anoPublicacao = anoPublicacao;
+        this.titulo = titulo;
+        this.id = id;
     }
 
     public Long getId() {

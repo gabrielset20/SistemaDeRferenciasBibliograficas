@@ -1,11 +1,10 @@
-package service;
+package com.example.gestaobibliografica.service;
 
 import jakarta.persistence.EntityNotFoundException;
-import model.Artigo;
-import model.RevistaCientifica;
+import com.example.gestaobibliografica.model.RevistaCientifica;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.RevistaCientificaRepository;
+import com.example.gestaobibliografica.repository.RevistaCientificaRepository;
 
 import java.util.List;
 
