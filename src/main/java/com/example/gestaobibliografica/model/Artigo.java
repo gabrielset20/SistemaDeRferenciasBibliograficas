@@ -17,17 +17,15 @@ public class Artigo {
     private String titulo;
     private int anoPublicacao;
 
-    // Relacionamento muitos-para-muitos com a entidade Autor.
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
     @JoinTable(
             name = "artigo_autor",
             joinColumns = @JoinColumn(name = "artigo_id"),
             inverseJoinColumns = @JoinColumn(name = "autor_id")
     )
-    private List<Autor> autores;
+    private List<Autor> autores = new ArrayList<>();
 
-    // Relacionamento muitos-para-um com RevistaCientifica.
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "revista_id")
     private RevistaCientifica revistaCientifica;
 

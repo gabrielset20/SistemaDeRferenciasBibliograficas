@@ -1,6 +1,8 @@
 package com.example.gestaobibliografica.model;
 
 import jakarta.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 // A anotação @Entity indica que essa classe é uma entidade JPA.
@@ -15,20 +17,15 @@ public class Autor {
 
     @Column(nullable = false)
     private String nome;
-    @Column(nullable = false)
-    private String afiliacao;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Afiliacao afiliacao;
 
     // @ManyToMany indica um relacionamento muitos-para-muitos com a entidade Artigo.
     @ManyToMany(mappedBy = "autores")
-    private List<Artigo> artigos;
+    private List<Artigo> artigos = new ArrayList<>();
 
-    public Autor(){}
-
-    public Autor(Long id, String nome, String afiliacao, List<Artigo> artigos) {
-        this.id = id;
-        this.nome = nome;
-        this.afiliacao = afiliacao;
-        this.artigos = artigos;
+    public Autor() {
     }
 
     public Long getId() {
@@ -47,11 +44,11 @@ public class Autor {
         this.nome = nome;
     }
 
-    public String getAfiliacao() {
+    public Afiliacao getAfiliacao() {
         return afiliacao;
     }
 
-    public void setAfiliacao(String afiliacao) {
+    public void setAfiliacao(Afiliacao afiliacao) {
         this.afiliacao = afiliacao;
     }
 
@@ -60,6 +57,13 @@ public class Autor {
     }
 
     public void setArtigos(List<Artigo> artigos) {
+        this.artigos = artigos;
+    }
+
+    public Autor(Long id, String nome, Afiliacao afiliacao, List<Artigo> artigos) {
+        this.id = id;
+        this.nome = nome;
+        this.afiliacao = afiliacao;
         this.artigos = artigos;
     }
 }

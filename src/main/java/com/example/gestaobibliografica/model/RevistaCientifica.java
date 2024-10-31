@@ -19,7 +19,7 @@ public class RevistaCientifica {
     private String nome;
 
     //Relacionamento um-para-muitos com Artigo.
-    @OneToMany(mappedBy = "revistaCientifica")
+    @OneToMany(mappedBy = "revistaCientifica", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Artigo> artigos;
 
     public RevistaCientifica() {}

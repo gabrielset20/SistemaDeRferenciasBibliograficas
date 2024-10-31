@@ -19,7 +19,7 @@ public class ArtigoController {
     // Endpoint para listar todos os artigos
     @GetMapping
     public List<Artigo> listarTodos() {
-        return artigoService.findAll();
+        return artigoService.listarTodos();
     }
 
     // Endpoint para criar um novo artigo
